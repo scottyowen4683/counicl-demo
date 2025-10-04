@@ -1,133 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Your Regional Council – Brisbane Demo Reference</title>
+  <title>North River Shire Council — DEMO KNOWLEDGE BASE (Universal Suburb Handling)</title>
+  <meta name="description" content="Demo-only council knowledge base for AI assistant trials. Always returns an answer for any suburb." />
   <meta name="robots" content="noindex,nofollow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;line-height:1.55}
-    h1{font-size:28px;margin:0 0 6px}
-    h2{font-size:22px;margin:26px 0 8px}
-    h3{font-size:18px;margin:18px 0 6px}
-    ul{margin:8px 0 18px 22px}
-    .small{color:#475569;font-size:14px}
-    .block{margin:10px 0 16px}
-    .table{border-collapse:collapse;width:100%;margin:8px 0 18px}
-    .table th,.table td{border:1px solid #E2E8F0;padding:8px 10px;text-align:left}
-    .callout{background:#F8FAFC;border:1px solid #E2E8F0;padding:10px 12px;margin:12px 0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;margin:0;color:#102A43}
+    header{background:#0A68FF;color:#fff;padding:24px 16px}
+    header h1{margin:0;font-size:28px}
+    header p{margin:6px 0 0;opacity:.9}
+    main{padding:28px 16px;max-width:1100px;margin:0 auto}
+    section{margin:28px 0;border:1px solid #E6EFF7;border-radius:12px;padding:20px}
+    h2{font-size:22px;margin:0 0 12px}
+    h3{font-size:18px;margin:18px 0 8px}
+    .note{background:#FFF8DB;border:1px solid #F5E1A4;border-radius:8px;padding:12px;margin:12px 0}
+    .ok{background:#E6FFFA;border:1px solid #B9F5EA;border-radius:8px;padding:12px;margin:12px 0}
+    .danger{background:#FFE8E8;border:1px solid #FFBABA;border-radius:8px;padding:12px;margin:12px 0}
+    .grid{display:grid;gap:10px}
+    .two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    table{border-collapse:collapse;width:100%;margin:10px 0}
+    th,td{border:1px solid #E6EFF7;padding:8px;text-align:left}
+    code, .qa{background:#F7FAFC;border:1px solid #E6EFF7;border-radius:8px;padding:10px;display:block}
+    .muted{opacity:.75}
+    .pill{display:inline-block;background:#ECF2FF;color:#123;border:1px solid #CAD6FF;padding:2px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f3f4f6;border:1px solid #e5e7eb;border-bottom-width:2px;border-radius:6px;padding:1px 6px}
+    .list-compact li{margin:4px 0}
   </style>
 </head>
 <body>
-<h1>Brisbane Demo Reference (Internal)</h1>
-<p class="small">This hidden page exists only to feed the AI agent. Keep answers short, factual, and action-oriented. Where practical, end with: “Would you like me to send you the link for that?”</p>
+  <header>
+    <h1>North River Shire Council — <span class="pill">DEMO ONLY</span></h1>
+    <p>This page is a self-contained knowledge base for AI assistant trials. It is fictional but realistic and <strong>always returns an answer</strong> for any suburb.</p>
+  </header>
 
-<div class="callout">
-  <strong>Demo rules (agent-readable):</strong>
-  <ul>
-    <li>Use this page as the single source of truth for the demo.</li>
-    <li>Ask for suburb/address only when location is required (bin day, missed bin, roads/trees, councillor message, park booking).</li>
-    <li>Do not transfer to councillors. Take a message: name, suburb, issue, contact.</li>
-    <li>Offer: “Would you like me to send you the link for that?” or “Would you like me to connect you to a human?” when a link/action exists.</li>
-    <li>If a suburb is not listed in the bin table, say: “For this demo, I only have bin day data for 10 suburbs.”</li>
-  </ul>
-</div>
+  <main>
 
-<!-- BINS & WASTE -->
-<h2>Bins & Waste Collection</h2>
-<p class="block">Bins in the following suburbs are collected on these days. Recycling is fortnightly as shown. Missed bins should be reported after 4:30 pm on collection day; crews typically return within 48 hours. Damaged or stolen bins can be replaced; delivery is usually within 5 business days. Would you like me to send you the link for that?</p>
+    <section id="assistant-rules">
+      <h2>Assistant Rules (Read First)</h2>
+      <ol>
+        <li><strong>Always ask for the caller’s suburb first</strong> for location-based queries (councillor, waste, venues, rates property, road issues).</li>
+        <li><strong>Universal Suburb Handling:</strong> If the suburb isn’t listed in a table below, use the <em>Letter-Band Rules</em> to return a deterministic answer (no “we don’t know”).</li>
+        <li><strong>Reference numbers:</strong> use format <code>YRC</code><em>###</em> (e.g., <code>YRC187</code>) for all lodged requests.</li>
+        <li><strong>If the question is clearly non-council (e.g., passport, tax return):</strong> say it’s outside council scope and offer to connect to a human.</li>
+        <li><strong>Human handoff:</strong> If asked, capture name, number, suburb, topic; confirm transfer and end the call/chat.</li>
+        <li><strong>Emergencies:</strong> Life/property threat now → call 000. Otherwise after-hours line 1300 000 247.</li>
+      </ol>
+      <div class="note"><strong>Why this works:</strong> The Letter-Band Rules below let you answer councillor, waste day, libraries, and venue routing for <em>any</em> suburb by the first letter. If street number is provided, you can refine with an even/odd rule.</div>
+    </section>
 
-<table class="table">
-  <thead>
-    <tr><th>Suburb</th><th>General Waste</th><th>Recycling (fortnightly)</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Wynnum</td><td>Thursday</td><td>Monday (every second)</td></tr>
-    <tr><td>Carindale</td><td>Monday</td><td>Thursday (every second)</td></tr>
-    <tr><td>Sunnybank</td><td>Tuesday</td><td>Friday (every second)</td></tr>
-    <tr><td>Chermside</td><td>Wednesday</td><td>Tuesday (every second)</td></tr>
-    <tr><td>Indooroopilly</td><td>Friday</td><td>Wednesday (every second)</td></tr>
-    <tr><td>Nundah</td><td>Monday</td><td>Friday (every second)</td></tr>
-    <tr><td>Toowong</td><td>Tuesday</td><td>Thursday (every second)</td></tr>
-    <tr><td>Annerley</td><td>Wednesday</td><td>Friday (every second)</td></tr>
-    <tr><td>Red Hill</td><td>Thursday</td><td>Tuesday (every second)</td></tr>
-    <tr><td>New Farm</td><td>Friday</td><td>Monday (every second)</td></tr>
-  </tbody>
-</table>
+    <section id="letter-bands">
+      <h2>Universal Suburb Handling — Letter-Band Rules</h2>
+      <p>When the suburb provided is <em>not</em> in a specific table, map it using these rules.</p>
 
-<h3>Resource Recovery Centres</h3>
-<p class="block">Brisbane has four Resource Recovery Centres: Chandler, Ferny Grove, Nudgee, and Willawong. Open daily 6:30 am–5:45 pm, including public holidays. Households receive 10 free waste vouchers per year. Would you like me to send you the link for that?</p>
+      <h3>A) Councillor & Ward (by first letter of suburb)</h3>
+      <table>
+        <thead><tr><th>First Letter</th><th>Ward</th><th>Councillor</th><th>Email</th></tr></thead>
+        <tbody>
+          <tr><td>A–C</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+          <tr><td>D–H</td><td>Division 2</td><td>Cr Priya Patel</td><td>p.patel@northrivershire.demo</td></tr>
+          <tr><td>I–L</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+          <tr><td>M–P</td><td>Division 4</td><td>Cr Amy Williams</td><td>a.williams@northrivershire.demo</td></tr>
+          <tr><td>Q–T</td><td>Division 5</td><td>Cr Samir Khan</td><td>s.khan@northrivershire.demo</td></tr>
+          <tr><td>U–Z</td><td>Division 6</td><td>Cr Olivia Martin</td><td>o.martin@northrivershire.demo</td></tr>
+        </tbody>
+      </table>
 
-<!-- ANIMALS & PETS -->
-<h2>Animals & Pets</h2>
-<p class="block">Dog registration is mandatory. A non-desexed dog costs $157 per year. Registration can be completed online in a few minutes. Would you like me to send you the link for that?</p>
-<p class="block">Barking dog complaints require the address and typical times. I can take your details and lodge a complaint and provide a reference number. Would you like me to send you the link for that?</p>
+      <h3>B) Waste & Recycling Days (by first letter)</h3>
+      <table>
+        <thead><tr><th>First Letter</th><th>General Waste</th><th>Recycling</th><th>Refinement (if street number known)</th></tr></thead>
+        <tbody>
+          <tr><td>A–C</td><td>Monday</td><td>Thursday (fortnightly)</td><td>Even street # → AM; Odd → PM</td></tr>
+          <tr><td>D–H</td><td>Tuesday</td><td>Friday</td><td>Even → AM; Odd → PM</td></tr>
+          <tr><td>I–L</td><td>Wednesday</td><td>Monday (fortnightly)</td><td>Even → AM; Odd → PM</td></tr>
+          <tr><td>M–P</td><td>Thursday</td><td>Tuesday</td><td>Even → AM; Odd → PM</td></tr>
+          <tr><td>Q–T</td><td>Friday</td><td>Wednesday (fortnightly)</td><td>Even → AM; Odd → PM</td></tr>
+          <tr><td>U–Z</td><td>Monday</td><td>Thursday</td><td>Even → AM; Odd → PM</td></tr>
+        </tbody>
+      </table>
 
-<!-- RATES & PAYMENTS -->
-<h2>Rates & Payments</h2>
-<p class="block">Rates can be paid via the secure online portal (card, BPAY) or at Australia Post. Would you like me to send you the link for that?</p>
-<p class="block">Payment plans are available. Provide your property address and preferred frequency; I can pass this to the team. Would you like me to send you the link for that?</p>
+      <h3>C) Library & Venue Routing (by first letter)</h3>
+      <p>When a suburb isn’t explicitly listed under Libraries/Venues, route it like this:</p>
+      <table>
+        <thead><tr><th>First Letter</th><th>Primary Library</th><th>Primary Venue</th></tr></thead>
+        <tbody>
+          <tr><td>A–C</td><td>Riverstone Library</td><td>Civic Hall (Riverstone)</td></tr>
+          <tr><td>D–H</td><td>Bluegum Library</td><td>Bluegum Community Centre</td></tr>
+          <tr><td>I–L</td><td>Riverstone Library</td><td>Oakridge Reserve</td></tr>
+          <tr><td>M–P</td><td>Bluegum Library</td><td>Northpoint Sports Fields</td></tr>
+          <tr><td>Q–T</td><td>Riverstone Library</td><td>Greengate Gardens</td></tr>
+          <tr><td>U–Z</td><td>Bluegum Library</td><td>Civic Hall (Riverstone)</td></tr>
+        </tbody>
+      </table>
 
-<!-- ROADS & MAINTENANCE -->
-<h2>Roads & Maintenance</h2>
-<p class="block">Potholes can be reported with the street name or nearest intersection. I will create a job and provide a reference number. Would you like me to send you the link for that?</p>
-<p class="block">Streetlight faults can be reported using the pole number or nearest address. I will lodge a service request. Would you like me to send you the link for that?</p>
-<p class="block">Overgrown verge or fallen tree issues require the exact location and a brief description. I can log it for assessment and prioritisation. Would you like me to send you the link for that?</p>
+      <div class="qa"><strong>Example:</strong> “Who’s the councillor for <em>Yarrabee Heights</em>?” → Y starts with Y (U–Z) → Division 6, Cr Olivia Martin, o.martin@northrivershire.demo.</div>
+      <div class="qa"><strong>Example:</strong> “What day is recycling in <em>Dalwood</em>?” → D (D–H) → Recycling Friday. If street # provided: Even=AM, Odd=PM.</div>
+    </section>
 
-<!-- BUILDING & DEVELOPMENT -->
-<h2>Building & Development</h2>
-<p class="block">Garages under 10 m² and under 2.4 m high usually do not need approval. Larger structures require building approval. Would you like me to send you the link for that?</p>
-<p class="block">Fences under 2 m height usually do not require approval. Higher fences or corner blocks may require approval. Would you like me to send you the checklist link for that?</p>
-<p class="block">To check zoning, setbacks, and overlays, provide your address and I will direct you to the mapping tools or request a duty planner callback. Would you like me to send you the link for that?</p>
+    <section id="about">
+      <h2>About North River Shire Council (Demo)</h2>
+      <p>North River Shire Council (NRSC) is a fictional Queensland local government created solely for demonstration and testing of AI customer service. Any names, numbers, and processes below are placeholders for trial use.</p>
+      <div class="note"><strong>Key behaviour:</strong> Ask “What suburb are you in?” then answer using the explicit tables below; if not present, apply the <strong>Letter-Band Rules</strong> above. No apologies for unknown suburbs—there is always a deterministic answer.</div>
+    </section>
 
-<!-- PARKS & FACILITIES -->
-<h2>Parks & Facilities</h2>
-<p class="block">Park shelters can be booked online. Provide the park, suburb, date, time, and estimated headcount. I can hold provisionally and send the booking form. Would you like me to send you the link for that?</p>
-<p class="block">Sports field status changes with weather. Check the current status page or subscribe to updates. Would you like me to send you the link for that?</p>
+    <section id="contact">
+      <h2>Contact & Hours</h2>
+      <div class="grid two">
+        <div>
+          <h3>General Contacts</h3>
+          <ul class="list-compact">
+            <li><strong>Phone (Mon–Fri):</strong> +61 7 3456 7890</li>
+            <li><strong>After-hours emergencies:</strong> 1300 000 247</li>
+            <li><strong>Email:</strong> info@northrivershire.demo</li>
+            <li><strong>Address:</strong> 100 Civic Way, Riverstone QLD 4000</li>
+            <li><strong>Payments:</strong> pay@northrivershire.demo</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Opening Hours</h3>
+          <ul class="list-compact">
+            <li>Mon–Thu: 8:30am–5:00pm</li>
+            <li>Fri: 8:30am–4:30pm</li>
+            <li>Weekends/Public Holidays: Closed</li>
+          </ul>
+          <div class="ok">If a caller requests a human, capture name, number, suburb, topic, say:
+            “Thanks, I’m transferring you now.” (For the demo, confirm transfer and end.)</div>
+        </div>
+      </div>
+    </section>
 
-<!-- GOVERNANCE & CONTACT -->
-<h2>Governance & Contact</h2>
-<p class="block">Messages for councillors are taken and forwarded to the correct ward office based on your address. I will collect your name, suburb, issue summary, and best contact. No live transfer. Would you like me to send you the contact page link for that?</p>
-<p class="block">General council meetings are usually held on Tuesdays at Brisbane Square. Agendas and minutes are published online. Would you like me to send you the link for that?</p>
-<p class="block">Complaints or compliments can be lodged online. I will provide a reference number after submission. Would you like me to send you the link for that?</p>
+    <section id="suburbs">
+      <h2>Specific Suburb → Councillor / Ward (sample set)</h2>
+      <p>Use these first when matched; otherwise fall back to Letter-Band Rules.</p>
+      <table aria-label="Suburbs and Councillors">
+        <thead><tr><th>Suburb</th><th>Ward</th><th>Councillor</th><th>Contact</th></tr></thead>
+        <tbody>
+          <tr><td>Riverstone</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+          <tr><td>Bluegum</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+          <tr><td>Ironbark</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+          <tr><td>Oakridge</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+          <tr><td>Fernvale</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+          <tr><td>Stonehaven</td><td>Division 4</td><td>Cr Amy Williams</td><td>a.williams@northrivershire.demo</td></tr>
+          <tr><td>Windorah Park</td><td>Division 4</td><td>Cr Amy Williams</td><td>a.williams@northrivershire.demo</td></tr>
+          <tr><td>Willowbank</td><td>Division 4</td><td>Cr Amy Williams</td><td>a.williams@northrivershire.demo</td></tr>
+          <tr><td>Northpoint</td><td>Division 5</td><td>Cr Samir Khan</td><td>s.khan@northrivershire.demo</td></tr>
+          <tr><td>Beacon Hill</td><td>Division 5</td><td>Cr Samir Khan</td><td>s.khan@northrivershire.demo</td></tr>
+          <tr><td>Greengate</td><td>Division 6</td><td>Cr Olivia Martin</td><td>o.martin@northrivershire.demo</td></tr>
+          <tr><td>Rosefield</td><td>Division 6</td><td>Cr Olivia Martin</td><td>o.martin@northrivershire.demo</td></tr>
+        </tbody>
+      </table>
+      <div class="qa"><strong>Q:</strong> Who is my councillor?<br>
+      <strong>A:</strong> What suburb are you in? If it’s in the table above, use that. Otherwise apply the Letter-Band mapping (A–C → Cr Bloggs, etc.).</div>
+    </section>
 
-<!-- PARKING & TRANSPORT -->
-<h2>Parking & Transport</h2>
-<p class="block">Parking fine reviews must be lodged within 28 days using the secure online form. Would you like me to send you the link for that?</p>
-<p class="block">Residential parking permits are available for eligible signed zones. Proof of residence and vehicle details are required. Would you like me to send you the link for that?</p>
+    <section id="waste">
+      <h2>Waste & Recycling</h2>
+      <p>Standard bins: 240L general waste + 240L recycling. If a suburb isn’t in the table, use the Letter-Band schedule.</p>
+      <table aria-label="Waste days by suburb (sample)">
+        <thead><tr><th>Suburb</th><th>General Waste</th><th>Recycling</th></tr></thead>
+        <tbody>
+          <tr><td>Riverstone</td><td>Tuesday</td><td>Friday</td></tr>
+          <tr><td>Bluegum</td><td>Monday</td><td>Thursday</td></tr>
+          <tr><td>Ironbark</td><td>Wednesday</td><td>Monday (fortnightly)</td></tr>
+          <tr><td>Oakridge</td><td>Thursday</td><td>Tuesday (fortnightly)</td></tr>
+          <tr><td>Fernvale</td><td>Friday</td><td>Wednesday</td></tr>
+        </tbody>
+      </table>
+      <div class="qa"><strong>Q:</strong> My bin was missed—what do I do?<br>
+      <strong>A:</strong> Confirm suburb and day. If it matches either the specific table or the Letter-Band schedule and the bin was out by 6am, log a missed collection and issue a reference like <strong>YRC187</strong>. Re-collection usually within 1 business day.</div>
+    </section>
 
-<!-- LIBRARIES & COMMUNITY -->
-<h2>Libraries & Community</h2>
-<p class="block">Library membership is free with photo ID. You can join online or at a branch. A digital card is available after signup. Would you like me to send you the link for that?</p>
-<p class="block">Community grants up to $10,000 are offered with rounds opening during the year. Check current programs and eligibility. Would you like me to send you the link for that?</p>
+    <section id="venues">
+      <h2>Parks, Halls & Venues</h2>
+      <table aria-label="Venues">
+        <thead><tr><th>Venue</th><th>Suburb</th><th>Capacity</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Civic Hall</td><td>Riverstone</td><td>400 seated</td><td>Stage, AV available; bookings required</td></tr>
+          <tr><td>Bluegum Community Centre</td><td>Bluegum</td><td>150</td><td>Kitchenette; alcohol by permit</td></tr>
+          <tr><td>Oakridge Reserve</td><td>Oakridge</td><td>Open space</td><td>Gazebos first-come unless booked</td></tr>
+          <tr><td>Northpoint Sports Fields</td><td>Northpoint</td><td>Grandstand</td><td>Seasonal priority to clubs</td></tr>
+          <tr><td>Greengate Gardens</td><td>Greengate</td><td>Open space</td><td>Marquees require permit</td></tr>
+        </tbody>
+      </table>
+      <div class="qa"><strong>Q:</strong> Can I book a park in &lt;Any Suburb&gt;?<br>
+      <strong>A:</strong> Use the Letter-Band routing to pick the primary venue, collect date/time/headcount, log a booking request, and issue a reference (e.g., <strong>YRC187</strong>).</div>
+    </section>
 
-<!-- ENVIRONMENTAL HEALTH -->
-<h2>Environmental Health</h2>
-<p class="block">Noise issues can be reported with the address, nature of the noise, and typical times. I will create a case for assessment. Would you like me to send you the link for that?</p>
-<p class="block">Paint, chemicals, and other hazardous waste must be taken to designated drop-off options. Some materials have specific rules. Would you like me to send you the link for that?</p>
+    <section id="rates">
+      <h2>Rates & Payments</h2>
+      <ul class="list-compact">
+        <li><strong>Issue cycles:</strong> Twice yearly (January & July).</li>
+        <li><strong>Discount:</strong> 5% if paid within 30 days of issue.</li>
+        <li><strong>Methods:</strong> BPAY, Credit/Debit, Direct Debit (forms), In-person.</li>
+        <li><strong>Hardship:</strong> Payment plans available on application.</li>
+      </ul>
+      <div class="qa"><strong>Q:</strong> I didn’t receive my rates notice.<br>
+      <strong>A:</strong> Verify full name and property address plus suburb; issue an e-copy. If suburb not in table, still proceed—suburb is used for routing only.</div>
+    </section>
 
-<!-- GENERAL -->
-<h2>General</h2>
-<p class="block">The Contact Centre operates 24/7. The Brisbane Square service centre is open Monday–Friday, 8:30 am–4:30 pm (excluding public holidays). Would you like me to send you the service centre information page link for that?</p>
-<p class="block">Job vacancies are listed on the Careers page and can be filtered by category. Would you like me to send you the link for that?</p>
+    <section id="permits">
+      <h2>Permits, Lodgements & Common Requests</h2>
+      <div class="grid two">
+        <div>
+          <h3>Popular</h3>
+          <ul class="list-compact">
+            <li>Animal registration & renewals</li>
+            <li>Driveway & crossover permits</li>
+            <li>Fences & retaining walls (self-assess or DA)</li>
+            <li>Outdoor dining permit</li>
+            <li>Temporary road closure (events/works)</li>
+            <li>Park use & event bookings</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Turnaround (typical)</h3>
+          <ul class="list-compact">
+            <li>Animal registration: Instant (online) or 1–2 days</li>
+            <li>Outdoor dining: 10 business days</li>
+            <li>Driveway permit: 10–15 business days</li>
+            <li>Event/park booking: 3–7 business days</li>
+            <li>Road closure: 20 business days</li>
+          </ul>
+        </div>
+      </div>
 
-<!-- COUNCILLORS BY WARD -->
-<h2>Councillors by Ward</h2>
-<p class="block small">Use exact phrasing. Do not use any other councillor names. If a caller asks for a councillor not listed here, say: “For this demo, I only have councillor details for 10 wards.”</p>
+      <div class="qa"><strong>Q:</strong> Do I need approval for a fence?<br>
+      <strong>A:</strong> Most standard fences ≤2.0m are self-assessable; over 2.0m or corner lots may need approval. Ask for suburb; if not listed, apply Letter-Band routing to book advice or send forms.</div>
+    </section>
 
-<ul>
-  <li>The councillor for <strong>Wynnum Manly Ward</strong> is <strong>Alex Givney</strong>. Wynnum Manly Ward covers Wynnum, Manly, Lota, and nearby bayside suburbs.</li>
-  <li>The councillor for <strong>Chandler Ward</strong> is <strong>Ryan Murphy</strong>. Chandler Ward covers Carindale, Chandler, Gumdale, Belmont, and parts of Mansfield.</li>
-  <li>The councillor for <strong>Marchant Ward</strong> is <strong>Danita Parry</strong>. Marchant Ward covers Chermside, Aspley, Zillmere, and parts of Geebung.</li>
-  <li>The councillor for <strong>Walter Taylor Ward</strong> is <strong>Penny Wolff</strong>. Walter Taylor Ward covers Indooroopilly, Toowong, St Lucia, and parts of Taringa.</li>
-  <li>The councillor for <strong>Runcorn Ward</strong> is <strong>Kim Marx</strong>. Runcorn Ward covers Sunnybank, Runcorn, Kuraby, and parts of Eight Mile Plains.</li>
-  <li>The councillor for <strong>Deagon Ward</strong> is <strong>Jared Cassidy</strong>. Deagon Ward covers Nundah, Deagon, Sandgate, and Shorncliffe.</li>
-  <li>The councillor for <strong>Central Ward</strong> is <strong>Vicki Howard</strong>. Central Ward covers Brisbane CBD, Fortitude Valley, New Farm, and Spring Hill.</li>
-  <li>The councillor for <strong>The Gabba Ward</strong> is <strong>Trina Massey</strong>. The Gabba Ward covers Annerley, Woolloongabba, Dutton Park, and Highgate Hill.</li>
-  <li>The councillor for <strong>Paddington Ward</strong> is <strong>Seal Chong Wah</strong>. Paddington Ward covers Red Hill, Kelvin Grove, Milton, and Paddington.</li>
-  <li>The councillor for <strong>Central Ward</strong> is <strong>Vicki Howard</strong>. Central Ward also services Toowong and New Farm in this demo list.</li>
-</ul>
+    <section id="animals">
+      <h2>Animals</h2>
+      <div class="qa"><strong>Q:</strong> Do I need to register my dog?<br>
+      <strong>A:</strong> Yes, registration is mandatory shire-wide. Concessions for desexed/microchipped animals.</div>
+      <div class="qa"><strong>Q:</strong> I found a stray dog—what do I do?<br>
+      <strong>A:</strong> If safe, check tag and call +61 7 3456 7890 (business hours) or 1300 000 247 (after hours). Provide suburb for officer dispatch (any suburb accepted via Letter-Band routing).</div>
+    </section>
 
-<!-- END -->
+    <section id="roads">
+      <h2>Roads, Footpaths & Stormwater</h2>
+      <div class="qa"><strong>Q:</strong> There’s a pothole. Can you fix it?<br>
+      <strong>A:</strong> Yes—confirm suburb (any allowed) and nearest address. Log works request with reference like <strong>YRC187</strong>. Typical SLA: 10 business days (faster if hazardous).</div>
+      <div class="qa"><strong>Q:</strong> Stormwater grate blocked.<br>
+      <strong>A:</strong> Provide suburb and location. Prioritise if rain is forecast. After-hours hazards: 1300 000 247.</div>
+    </section>
+
+    <section id="libraries">
+      <h2>Libraries</h2>
+      <ul class="list-compact">
+        <li>Riverstone Library (Mon–Sat), Bluegum Library (Tue–Sat)</li>
+        <li>Public PCs, Wi-Fi, printing, storytime</li>
+      </ul>
+      <div class="qa"><strong>Q:</strong> What are library hours today?<br>
+      <strong>A:</strong> Ask for suburb; if not a listed branch, use Letter-Band routing to choose Riverstone or Bluegum, then give hours.</div>
+    </section>
+
+    <section id="payments">
+      <h2>How to Pay</h2>
+      <ul class="list-compact">
+        <li><strong>Online:</strong> pay@northrivershire.demo (invoice or rates number required)</li>
+        <li><strong>BPAY:</strong> Biller Code 123456, Ref = your notice number</li>
+        <li><strong>Phone:</strong> +61 7 3456 7890 (card payments)</li>
+        <li><strong>In-person:</strong> 100 Civic Way, Riverstone</li>
+      </ul>
+      <div class="qa"><strong>Q:</strong> Can I get a copy of my invoice?<br>
+      <strong>A:</strong> Yes—after verifying name, suburb (any), and address, we’ll email a copy.</div>
+    </section>
+
+    <section id="complaints">
+      <h2>Feedback & Complaints</h2>
+      <p>We aim to resolve most issues at first contact.</p>
+      <div class="qa"><strong>Q:</strong> I want to make a complaint.<br>
+      <strong>A:</strong> I’ll log it now. Please provide your name, suburb (any), contact number, and a brief description. You’ll receive a reference like <strong>YRC187</strong>. Target response: 5 business days.</div>
+      <div class="qa"><strong>Q:</strong> How do I give positive feedback?<br>
+      <strong>A:</strong> I can capture it and pass it to the relevant team and your mapped councillor based on your suburb’s first letter.</div>
+    </section>
+
+    <section id="mayor-council">
+      <h2>Mayor & Councillors (At a Glance)</h2>
+      <ul class="list-compact">
+        <li><strong>Mayor:</strong> Cr Taylor Reid — mayor@northrivershire.demo</li>
+        <li><strong>Deputy Mayor:</strong> Cr Olivia Martin — o.martin@northrivershire.demo</li>
+        <li><strong>Division 1:</strong> Cr Joe Bloggs — j.bloggs@northrivershire.demo</li>
+        <li><strong>Division 2:</strong> Cr Priya Patel — p.patel@northrivershire.demo</li>
+        <li><strong>Division 3:</strong> Cr Michael Chen — m.chen@northrivershire.demo</li>
+        <li><strong>Division 4:</strong> Cr Amy Williams — a.williams@northrivershire.demo</li>
+        <li><strong>Division 5:</strong> Cr Samir Khan — s.khan@northrivershire.demo</li>
+        <li><strong>Division 6:</strong> Cr Olivia Martin — o.martin@northrivershire.demo</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy (Demo)</h2>
+      <p class="muted">This is a demo only. Any details captured are placeholders and not stored in production systems.</p>
+      <div class="qa"><strong>Q:</strong> How is my information used?<br>
+      <strong>A:</strong> For this demo, details are used only to simulate council workflows and are not retained beyond testing.</div>
+    </section>
+
+    <section id="faq">
+      <h2>Quick FAQ (Scrapable Q/A)</h2>
+
+      <div class="qa"><strong>Q:</strong> What is your general phone number?<br>
+      <strong>A:</strong> +61 7 3456 7890 (Mon–Fri); after-hours emergencies 1300 000 247.</div>
+
+      <div class="qa"><strong>Q:</strong> Where are you located?<br>
+      <strong>A:</strong> 100 Civic Way, Riverstone QLD 4000.</div>
+
+      <div class="qa"><strong>Q:</strong> Who is the councillor for &lt;Any Suburb&gt;?<br>
+      <strong>A:</strong> Use the Letter-Band mapping by first letter to provide the councillor and ward.</div>
+
+      <div class="qa"><strong>Q:</strong> What day is bin collection in &lt;Any Suburb&gt;?<br>
+      <strong>A:</strong> Use Letter-Band schedule. If a street number is given, use Even=AM / Odd=PM refinement.</div>
+
+      <div class="qa"><strong>Q:</strong> Can I pay my rates online?<br>
+      <strong>A:</strong> Yes—BPAY, phone card payments, or request a secure email link via pay@northrivershire.demo.</div>
+
+      <div class="qa"><strong>Q:</strong> I want to report a pothole.<br>
+      <strong>A:</strong> Provide suburb (any) and nearest address; log and give reference like <strong>YRC187</strong>.</div>
+
+      <div class="qa"><strong>Q:</strong> Can I book Civic Hall on 15 November?<br>
+      <strong>A:</strong> Confirm suburb and event details; if the suburb is not mapped to Civic Hall, route by Letter-Band primary venue and place a provisional hold with a reference.</div>
+
+      <div class="qa"><strong>Q:</strong> Do I need approval for outdoor dining?<br>
+      <strong>A:</strong> Yes—processing typically 10 business days after a complete application.</div>
+
+      <div class="qa"><strong>Q:</strong> How do I contact the Mayor?<br>
+      <strong>A:</strong> Email mayor@northrivershire.demo or call +61 7 3456 7890 (ask for Mayor’s Office).</div>
+    </section>
+
+    <section id="disclaimer">
+      <h2>Disclaimer</h2>
+      <p>This page is a <strong>fictional demo</strong> intended to let an AI assistant answer comprehensive council-style questions. Replace names, emails, and numbers before any real-world use.</p>
+    </section>
+
+  </main>
 </body>
 </html>
