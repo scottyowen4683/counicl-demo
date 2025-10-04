@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>North River Shire Council — DEMO KNOWLEDGE BASE (Pure Data MAX)</title>
+<title>North River Shire Council — DEMO KNOWLEDGE BASE (Pure Data MAX — Consolidated)</title>
 <meta name="description" content="Comprehensive factual-only demo dataset for council AI trials. All values are placeholders." />
 <meta name="robots" content="noindex,nofollow" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -23,13 +23,13 @@
 </head>
 <body>
 <header>
-  <h1>North River Shire Council — DEMO ONLY (Pure Data MAX)</h1>
+  <h1>North River Shire Council — DEMO ONLY (Pure Data MAX — Consolidated)</h1>
   <p class="small">Fictional dataset for AI customer service trials covering broad QLD council-style services.</p>
 </header>
 
 <main>
 
-<!-- IDENTITY & CONTACT -->
+<!-- ===================== CORE IDENTITY ===================== -->
 <section id="identity">
   <h2>Identity & Contact</h2>
   <table>
@@ -57,7 +57,7 @@
   <ul><li>New Year’s Day</li><li>Australia Day</li><li>Good Friday</li><li>Easter Monday</li><li>ANZAC Day</li><li>Labour Day</li><li>Ekka Show Holiday (local)</li><li>Christmas Day</li><li>Boxing Day</li></ul>
 </section>
 
-<!-- GOVERNANCE -->
+<!-- ===================== GOVERNANCE ===================== -->
 <section id="governance">
   <h2>Mayor & Councillors</h2>
   <table>
@@ -99,7 +99,7 @@
   </table>
 </section>
 
-<!-- WASTE -->
+<!-- ===================== WASTE ===================== -->
 <section id="waste">
   <h2>Waste & Recycling (Kerbside)</h2>
   <table>
@@ -120,7 +120,21 @@
       <tr><td>U–Z</td><td>Mon</td><td>Thu</td><td>Even AM / Odd PM</td></tr>
     </tbody>
   </table>
-  <h3>Waste Facilities & Fees</h3>
+  <h3>Specific Suburbs (overrides)</h3>
+  <table>
+    <thead><tr><th>Suburb</th><th>General Waste</th><th>Recycling</th></tr></thead>
+    <tbody>
+      <tr><td>Riverstone</td><td>Tuesday</td><td>Friday</td></tr>
+      <tr><td>Bluegum</td><td>Monday</td><td>Thursday</td></tr>
+      <tr><td>Ironbark</td><td>Wednesday</td><td>Monday (F/N)</td></tr>
+      <tr><td>Oakridge</td><td>Thursday</td><td>Tuesday (F/N)</td></tr>
+      <tr><td>Fernvale</td><td>Friday</td><td>Wednesday</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="waste-facilities">
+  <h2>Waste Facilities & Hard Waste</h2>
   <table>
     <tr><th>Resource Recovery Centre</th><td>200 Recycle Rd, Riverstone</td></tr>
     <tr><th>RRC Hours</th><td>Mon–Sun 07:00–17:00 (Closed Christmas Day)</td></tr>
@@ -146,7 +160,7 @@
   </table>
 </section>
 
-<!-- RATES -->
+<!-- ===================== RATES ===================== -->
 <section id="rates">
   <h2>Rates & Payments</h2>
   <table>
@@ -159,7 +173,7 @@
   </table>
 </section>
 
-<!-- BUILDING -->
+<!-- ===================== BUILDING/PLUMBING ===================== -->
 <section id="building-plumbing">
   <h2>Building, Plumbing & Drainage</h2>
   <table>
@@ -181,7 +195,7 @@
   </table>
 </section>
 
-<!-- PLANNING & CERTIFICATES -->
+<!-- ===================== PLANNING ===================== -->
 <section id="planning">
   <h2>Planning — Zones, Overlays & Certificates</h2>
   <table>
@@ -212,7 +226,7 @@
   </table>
 </section>
 
-<!-- ROADS & TRAFFIC -->
+<!-- ===================== ROADS & TRAFFIC ===================== -->
 <section id="roads-traffic">
   <h2>Roads, Traffic & Temporary Closures</h2>
   <table>
@@ -232,7 +246,7 @@
   </table>
 </section>
 
-<!-- WATER & TRADE WASTE -->
+<!-- ===================== WATER/SEWER ===================== -->
 <section id="water-sewer">
   <h2>Water, Sewer, Trade Waste & Backflow</h2>
   <table>
@@ -246,7 +260,7 @@
   </table>
 </section>
 
-<!-- ANIMALS -->
+<!-- ===================== ANIMALS/PARKING ===================== -->
 <section id="animals-parking">
   <h2>Animals — Registration, Pound & Nuisance</h2>
   <table>
@@ -262,7 +276,6 @@
   </table>
 </section>
 
-<!-- PARKING & INFRINGEMENTS -->
 <section id="parking">
   <h2>Parking — Permits & Infringements</h2>
   <table>
@@ -277,7 +290,7 @@
   </table>
 </section>
 
-<!-- ENVIRONMENTAL HEALTH -->
+<!-- ===================== ENV HEALTH / EVENTS ===================== -->
 <section id="env-health">
   <h2>Environmental Health — Food, Noise, Events</h2>
   <table>
@@ -293,7 +306,6 @@
   </table>
 </section>
 
-<!-- EVENTS/PARKS/FILMING/MARKETS -->
 <section id="events">
   <h2>Events, Parks Use, Filming & Markets</h2>
   <table>
@@ -306,11 +318,15 @@
       <tr><td>Market permit (recurring)</td><td>$450/season</td><td>15 business days</td><td>Stallholder management</td></tr>
       <tr><td>Busking permit</td><td>$40/yr</td><td>5 business days</td><td>Code of conduct</td></tr>
       <tr><td>Commercial signage (temporary)</td><td>$110</td><td>5–10 business days</td><td>Advertising device rules</td></tr>
+      <tr><td>Pop-up market (≤20 stalls)</td><td>$260/event</td><td>10 business days</td><td>Waste plan; amenities</td></tr>
+      <tr><td>Major market (>20 stalls)</td><td>$520/event</td><td>15–20 business days</td><td>Traffic & risk plans</td></tr>
+      <tr><td>Drone filming over council land</td><td>$180/day</td><td>10 business days</td><td>CASA compliance; NOTAM if required</td></tr>
+      <tr><td>Advertising stills</td><td>$120/day</td><td>5 business days</td><td>Minimal impact</td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- LIBRARIES & VENUES -->
+<!-- ===================== LIBRARIES & VENUES ===================== -->
 <section id="libraries-venues">
   <h2>Libraries & Halls</h2>
   <h3>Libraries</h3>
@@ -343,7 +359,7 @@
   </table>
 </section>
 
-<!-- CEMETERIES -->
+<!-- ===================== CEMETERIES / GRANTS / DISASTER ===================== -->
 <section id="cemeteries">
   <h2>Cemeteries & Memorials</h2>
   <table>
@@ -358,7 +374,6 @@
   </table>
 </section>
 
-<!-- COMMUNITY GRANTS -->
 <section id="grants">
   <h2>Community Grants (demo)</h2>
   <table>
@@ -369,7 +384,6 @@
   </table>
 </section>
 
-<!-- DISASTER MANAGEMENT -->
 <section id="disaster">
   <h2>Disaster Management</h2>
   <table>
@@ -379,7 +393,7 @@
   </table>
 </section>
 
-<!-- PROPERTY SEARCHES -->
+<!-- ===================== PROPERTY SEARCHES ===================== -->
 <section id="property-search">
   <h2>Property Searches & Certificates</h2>
   <table>
@@ -393,10 +407,76 @@
     </tbody>
   </table>
 </section>
-<!-- ===================================================== -->
-<!-- MAX++ ADD-ON SECTIONS — PURE DATA ONLY (DEMO)        -->
-<!-- ===================================================== -->
 
+<!-- ===================== PAYMENTS / COMPLAINTS / FORMS / META ===================== -->
+<section id="payments">
+  <h2>Payments & Methods</h2>
+  <table>
+    <tr><th>Online</th><td>Request secure link via pay@northrivershire.demo</td></tr>
+    <tr><th>BPAY</th><td>Biller 123456; Ref = notice number</td></tr>
+    <tr><th>Phone</th><td>+61 7 3456 7890 (card)</td></tr>
+    <tr><th>In-person</th><td>100 Civic Way, Riverstone</td></tr>
+    <tr><th>Direct Debit</th><td>FRM-FIN-090</td></tr>
+  </table>
+</section>
+
+<section id="complaints">
+  <h2>Feedback, Complaints & RTI</h2>
+  <table>
+    <tr><th>Complaint logging</th><td>Reference format <code>YRC###</code>; first response within 5 business days</td></tr>
+    <tr><th>Compliments</th><td>Recorded and forwarded to relevant team and councillor</td></tr>
+    <tr><th>Right to Information (RTI) app fee (demo)</th><td>$52.60</td></tr>
+  </table>
+</section>
+
+<section id="forms">
+  <h2>Forms & Checklists (IDs only)</h2>
+  <table>
+    <thead><tr><th>Form Name</th><th>Form ID (demo)</th></tr></thead>
+    <tbody>
+      <tr><td>Building Application Checklist</td><td>FRM-BLD-001</td></tr>
+      <tr><td>Owner’s Consent Form</td><td>FRM-BLD-002</td></tr>
+      <tr><td>Plumbing & Drainage Application</td><td>FRM-PLM-010</td></tr>
+      <tr><td>On-site Sewerage (Septic/AWTS)</td><td>FRM-PLM-011</td></tr>
+      <tr><td>Crossover Permit Application</td><td>FRM-RD-021</td></tr>
+      <tr><td>Road Opening / Excavation</td><td>FRM-RD-022</td></tr>
+      <tr><td>Temporary Road Closure</td><td>FRM-RD-023</td></tr>
+      <tr><td>Traffic Management Plan Submission</td><td>FRM-RD-024</td></tr>
+      <tr><td>Tree Works Permit Application</td><td>FRM-ENV-030</td></tr>
+      <tr><td>Food Business Licence Application</td><td>FRM-FND-040</td></tr>
+      <tr><td>Temporary Food Stall Permit</td><td>FRM-FND-041</td></tr>
+      <tr><td>Noise Exemption (Event)</td><td>FRM-ENV-042</td></tr>
+      <tr><td>Animal Registration</td><td>FRM-ANM-050</td></tr>
+      <tr><td>Residential Parking Permit</td><td>FRM-PKG-060</td></tr>
+      <tr><td>Event / Park Booking Request</td><td>FRM-EVT-070</td></tr>
+      <tr><td>Filming Permit Application</td><td>FRM-EVT-071</td></tr>
+      <tr><td>Community Grants Application</td><td>FRM-COM-080</td></tr>
+      <tr><td>Complaint / Feedback</td><td>FRM-CST-081</td></tr>
+      <tr><td>Rates Direct Debit Request</td><td>FRM-FIN-090</td></tr>
+      <tr><td>Planning & Development Certificate (Basic)</td><td>FRM-PLN-100</td></tr>
+      <tr><td>Planning & Development Certificate (Standard)</td><td>FRM-PLN-101</td></tr>
+      <tr><td>Planning & Development Certificate (Full)</td><td>FRM-PLN-102</td></tr>
+      <tr><td>RTI Application</td><td>FRM-GOV-110</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="meta">
+  <h2>Operational Defaults (Demo)</h2>
+  <table>
+    <tr><th>Reference number format</th><td>YRC### (e.g., YRC187)</td></tr>
+    <tr><th>Booking acknowledgement</th><td>Provisional hold on receipt of details (demo)</td></tr>
+    <tr><th>Confirmation method</th><td>Email/SMS noted (demo)</td></tr>
+    <tr><th>Languages</th><td>English primary; interpreter access (demo)</td></tr>
+    <tr><th>Accessibility</th><td>Hearing loop at Civic Hall; Library Quiet Hour Wed 10:00–11:00</td></tr>
+    <tr><th>Emergency instruction</th><td>Threat to life/property → Call 000</td></tr>
+    <tr><th>After-hours</th><td>1300 000 247</td></tr>
+    <tr><th>Privacy (demo)</th><td>Data captured in demo is not retained for production</td></tr>
+    <tr><th>Service SLAs (general)</th><td>First response 5 business days unless noted</td></tr>
+  </table>
+</section>
+
+<!-- ===================== ADD-ONS (Street trading, hoarding, signage, etc.) ===================== -->
 <section id="street-trading">
   <h2>Street Trading & Outdoor Dining</h2>
   <table>
@@ -461,7 +541,7 @@
     <tr><th>New rural address allocation</th><td>$95</td></tr>
     <tr><th>Number change request (urban)</th><td>$160</td></tr>
     <tr><th>Turnaround</th><td>10–15 business days</td></tr>
-    <tr><th>Authority notifications (demo)</th><td>Council, Queensland Fire and Emergency Services, Australia Post</td></tr>
+    <tr><th>Authority notifications (demo)</th><td>Council, QFES, Australia Post</td></tr>
   </table>
 </section>
 
@@ -567,19 +647,6 @@
   </table>
 </section>
 
-<section id="markets-filming-exp">
-  <h2>Markets & Filming — Expanded</h2>
-  <table>
-    <thead><tr><th>Item</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>Pop-up market (≤20 stalls)</td><td>$260/event</td><td>10 business days</td><td>Waste plan; amenities</td></tr>
-      <tr><td>Major market (>20 stalls)</td><td>$520/event</td><td>15–20 business days</td><td>Traffic & risk plans</td></tr>
-      <tr><td>Drone filming over council land</td><td>$180/day</td><td>10 business days</td><td>CASA compliance; NOTAM if required</td></tr>
-      <tr><td>Advertising stills</td><td>$120/day</td><td>5 business days</td><td>Minimal impact</td></tr>
-    </tbody>
-  </table>
-</section>
-
 <section id="cctv-community-safety">
   <h2>Community Safety & CCTV (Demo)</h2>
   <table>
@@ -593,79 +660,8 @@
   <h2>Procurement & Tenders (Demo)</h2>
   <table>
     <tr><th>Tender portal</th><td>Vendor registration (demo)</td></tr>
-    <tr><th>Thresholds</th><td>Quotes <$15k; 2 quotes $15k–$50k; Tender >$200k</td></tr>
+    <tr><th>Thresholds</th><td>Quotes &lt;$15k; 2 quotes $15k–$50k; Tender &gt;$200k</td></tr>
     <tr><th>Local supplier preference</th><td>Up to 5% weighting (demo)</td></tr>
-  </table>
-</section>
-
-<!-- PAYMENTS -->
-<section id="payments">
-  <h2>Payments & Methods</h2>
-  <table>
-    <tr><th>Online</th><td>Request secure link via pay@northrivershire.demo</td></tr>
-    <tr><th>BPAY</th><td>Biller 123456; Ref = notice number</td></tr>
-    <tr><th>Phone</th><td>+61 7 3456 7890 (card)</td></tr>
-    <tr><th>In-person</th><td>100 Civic Way, Riverstone</td></tr>
-    <tr><th>Direct Debit</th><td>FRM-FIN-090</td></tr>
-  </table>
-</section>
-
-<!-- COMPLAINTS & RTI -->
-<section id="complaints">
-  <h2>Feedback, Complaints & RTI</h2>
-  <table>
-    <tr><th>Complaint logging</th><td>Reference format <code>YRC###</code>; first response within 5 business days</td></tr>
-    <tr><th>Compliments</th><td>Recorded and forwarded to relevant team and councillor</td></tr>
-    <tr><th>Right to Information (RTI) app fee (demo)</th><td>$52.60</td></tr>
-  </table>
-</section>
-
-<!-- FORMS -->
-<section id="forms">
-  <h2>Forms & Checklists (IDs only)</h2>
-  <table>
-    <thead><tr><th>Form Name</th><th>Form ID (demo)</th></tr></thead>
-    <tbody>
-      <tr><td>Building Application Checklist</td><td>FRM-BLD-001</td></tr>
-      <tr><td>Owner’s Consent Form</td><td>FRM-BLD-002</td></tr>
-      <tr><td>Plumbing & Drainage Application</td><td>FRM-PLM-010</td></tr>
-      <tr><td>On-site Sewerage (Septic/AWTS)</td><td>FRM-PLM-011</td></tr>
-      <tr><td>Crossover Permit Application</td><td>FRM-RD-021</td></tr>
-      <tr><td>Road Opening / Excavation</td><td>FRM-RD-022</td></tr>
-      <tr><td>Temporary Road Closure</td><td>FRM-RD-023</td></tr>
-      <tr><td>Traffic Management Plan Submission</td><td>FRM-RD-024</td></tr>
-      <tr><td>Tree Works Permit Application</td><td>FRM-ENV-030</td></tr>
-      <tr><td>Food Business Licence Application</td><td>FRM-FND-040</td></tr>
-      <tr><td>Temporary Food Stall Permit</td><td>FRM-FND-041</td></tr>
-      <tr><td>Noise Exemption (Event)</td><td>FRM-ENV-042</td></tr>
-      <tr><td>Animal Registration</td><td>FRM-ANM-050</td></tr>
-      <tr><td>Residential Parking Permit</td><td>FRM-PKG-060</td></tr>
-      <tr><td>Event / Park Booking Request</td><td>FRM-EVT-070</td></tr>
-      <tr><td>Filming Permit Application</td><td>FRM-EVT-071</td></tr>
-      <tr><td>Community Grants Application</td><td>FRM-COM-080</td></tr>
-      <tr><td>Complaint / Feedback</td><td>FRM-CST-081</td></tr>
-      <tr><td>Rates Direct Debit Request</td><td>FRM-FIN-090</td></tr>
-      <tr><td>Planning & Development Certificate (Basic)</td><td>FRM-PLN-100</td></tr>
-      <tr><td>Planning & Development Certificate (Standard)</td><td>FRM-PLN-101</td></tr>
-      <tr><td>Planning & Development Certificate (Full)</td><td>FRM-PLN-102</td></tr>
-      <tr><td>RTI Application</td><td>FRM-GOV-110</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- OPERATIONAL DEFAULTS -->
-<section id="meta">
-  <h2>Operational Defaults (Demo)</h2>
-  <table>
-    <tr><th>Reference number format</th><td>YRC### (e.g., YRC187)</td></tr>
-    <tr><th>Booking acknowledgement</th><td>Provisional hold on receipt of details (demo)</td></tr>
-    <tr><th>Confirmation method</th><td>Email/SMS noted (demo)</td></tr>
-    <tr><th>Languages</th><td>English primary; interpreter access (demo)</td></tr>
-    <tr><th>Accessibility</th><td>Hearing loop at Civic Hall; Library Quiet Hour Wed 10:00–11:00</td></tr>
-    <tr><th>Emergency instruction</th><td>Threat to life/property → Call 000</td></tr>
-    <tr><th>After-hours</th><td>1300 000 247</td></tr>
-    <tr><th>Privacy (demo)</th><td>Data captured in demo is not retained for production</td></tr>
-    <tr><th>Service SLAs (general)</th><td>First response 5 business days unless noted</td></tr>
   </table>
 </section>
 
