@@ -1,117 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>North River Shire Council — DEMO KNOWLEDGE BASE</title>
-  <meta name="description" content="Demo-only council knowledge base for AI assistant trials. Always returns an answer for any suburb." />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;margin:0;color:#102A43}
-    header{background:#0A68FF;color:#fff;padding:24px 16px}
-    header h1{margin:0;font-size:28px}
-    header p{margin:6px 0 0;opacity:.9}
-    main{padding:28px 16px;max-width:1100px;margin:0 auto}
-    section{margin:28px 0;border:1px solid #E6EFF7;border-radius:12px;padding:20px}
-    h2{font-size:22px;margin:0 0 12px}
-    h3{font-size:18px;margin:18px 0 8px}
-    .qa{background:#F7FAFC;border:1px solid #E6EFF7;border-radius:8px;padding:10px;display:block;margin:10px 0}
-    table{border-collapse:collapse;width:100%;margin:10px 0}
-    th,td{border:1px solid #E6EFF7;padding:8px;text-align:left}
-  </style>
+<meta charset="utf-8" />
+<title>North River Shire Council — DEMO KNOWLEDGE BASE (Pure Data MAX)</title>
+<meta name="description" content="Comprehensive factual-only demo dataset for council AI trials. All values are placeholders." />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;margin:0;color:#0f1b2d}
+ header{background:#0A68FF;color:#fff;padding:20px}
+ main{max-width:1200px;margin:0 auto;padding:20px}
+ section{border:1px solid #e6eef7;border-radius:10px;padding:16px;margin:16px 0}
+ h2{margin:0 0 10px}
+ h3{margin:12px 0 6px}
+ table{border-collapse:collapse;width:100%;margin:8px 0}
+ th,td{border:1px solid #e6eef7;padding:8px;text-align:left;vertical-align:top}
+ .muted{opacity:.75}
+ .small{font-size:12px}
+ code{background:#f6f8fb;border:1px solid #e6eef7;padding:2px 6px;border-radius:6px}
+ ul{margin:6px 0 6px 18px}
+</style>
 </head>
 <body>
-  <header>
-    <h1>North River Shire Council — <span>DEMO ONLY</span></h1>
-    <p>This page is a self-contained knowledge base for AI assistant trials. It is fictional but realistic and <strong>always returns an answer</strong> for any suburb.</p>
-  </header>
+<header>
+  <h1>North River Shire Council — DEMO ONLY (Pure Data MAX)</h1>
+  <p class="small">Fictional dataset for AI customer service trials covering broad QLD council-style services.</p>
+</header>
 
-  <main>
+<main>
 
-    <section id="response-style">
-      <h2>Response Style & Intent Rules</h2>
-      <ol>
-        <li><strong>Short-first:</strong> Answer in 1–2 sentences with pathway, fee, and timing. Then offer one action (lodge now or send forms).</li>
-        <li><strong>Service detection:</strong> If a service is named (garage, bin, dog rego, etc.), acknowledge it and answer directly. Only ask for missing essentials (suburb, date, size) in one follow-up.</li>
-        <li><strong>Universal suburb handling:</strong> Always apply the Letter-Band rules if suburb not listed. Never say “I don’t know.”</li>
-        <li><strong>References:</strong> Any lodged item gets a reference like <code>YRC###</code>. Confirm “I’ve sent a confirmation email/SMS.”</li>
-      </ol>
-    </section>
+<!-- IDENTITY & CONTACT -->
+<section id="identity">
+  <h2>Identity & Contact</h2>
+  <table>
+    <tr><th>Organisation</th><td>North River Shire Council (DEMO)</td></tr>
+    <tr><th>ABN (demo)</th><td>12 345 678 901</td></tr>
+    <tr><th>Office Address</th><td>100 Civic Way, Riverstone QLD 4000</td></tr>
+    <tr><th>Postal Address</th><td>PO Box 100, Riverstone QLD 4001</td></tr>
+    <tr><th>General Phone (business hours)</th><td>+61 7 3456 7890</td></tr>
+    <tr><th>After-hours emergencies</th><td>1300 000 247</td></tr>
+    <tr><th>General Email</th><td>info@northrivershire.demo</td></tr>
+    <tr><th>Payments Email</th><td>pay@northrivershire.demo</td></tr>
+    <tr><th>Mayor’s Office Email</th><td>mayor@northrivershire.demo</td></tr>
+    <tr><th>Website (demo)</th><td>https://example.com/demo-council</td></tr>
+  </table>
+  <h3>Opening Hours (Civic Centre)</h3>
+  <table>
+    <tr><th>Mon</th><td>08:30–17:00</td></tr>
+    <tr><th>Tue</th><td>08:30–17:00</td></tr>
+    <tr><th>Wed</th><td>08:30–17:00</td></tr>
+    <tr><th>Thu</th><td>08:30–17:00</td></tr>
+    <tr><th>Fri</th><td>08:30–16:30</td></tr>
+    <tr><th>Weekend/Public Holidays</th><td>Closed</td></tr>
+  </table>
+  <h3>Public Holidays (closures)</h3>
+  <ul><li>New Year’s Day</li><li>Australia Day</li><li>Good Friday</li><li>Easter Monday</li><li>ANZAC Day</li><li>Labour Day</li><li>Ekka Show Holiday (local)</li><li>Christmas Day</li><li>Boxing Day</li></ul>
+</section>
 
-    <section id="building">
-      <h2>Building & Planning — Pathways, Fees & Timings</h2>
-      <table>
-        <thead>
-          <tr><th>Work Type</th><th>Pathway</th><th>Base Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Garage / Shed</td><td>Building approval via certifier</td><td>$540 + $290 inspection</td><td>10–15 business days</td><td>Self-assess if ≤10m² & ≤2.4m high</td></tr>
-          <tr><td>Carport</td><td>Building approval</td><td>$520 + $250 inspection</td><td>10–15 business days</td><td>≥1.0m setback to boundary</td></tr>
-          <tr><td>Patio / Deck</td><td>Self-assess ≤10m², else approval</td><td>$480 + $240 inspection</td><td>7–12 business days</td><td>Decks >1m need balustrades</td></tr>
-          <tr><td>Fence / Retaining wall</td><td>Self-assess ≤2m, else approval</td><td>$390</td><td>5–10 business days</td><td>Pools have separate rules</td></tr>
-          <tr><td>Swimming pool / spa</td><td>Approval + barrier cert</td><td>$860 incl. inspection</td><td>12–20 business days</td><td>Barrier required</td></tr>
-          <tr><td>House extension</td><td>Building approval, planning if overlays</td><td>$1,250 + inspections</td><td>15–25 business days</td><td>Flood/heritage may apply</td></tr>
-          <tr><td>Granny flat</td><td>Planning + building approval</td><td>$1,100 + $980</td><td>20–30 business days</td><td>≤80m², extra parking may apply</td></tr>
-          <tr><td>Demolition</td><td>Planning if heritage; building approval</td><td>$1,450 + waste levy</td><td>15–30 business days</td><td>Asbestos rules apply</td></tr>
-          <tr><td>Driveway / Crossover</td><td>Crossover permit</td><td>$310 + $180 inspection</td><td>10 business days</td><td>Check trees/utilities</td></tr>
-          <tr><td>Tree removal</td><td>Permit if protected/overlay</td><td>$210</td><td>7–15 business days</td><td>Arborist report may be needed</td></tr>
-          <tr><td>Plumbing & drainage</td><td>Plumbing app + inspections</td><td>$360 + $160/inspection</td><td>5–10 business days</td><td>QBCC plumber required</td></tr>
-        </tbody>
-      </table>
+<!-- GOVERNANCE -->
+<section id="governance">
+  <h2>Mayor & Councillors</h2>
+  <table>
+    <tr><th>Mayor</th><td>Cr Taylor Reid — mayor@northrivershire.demo</td></tr>
+    <tr><th>Deputy Mayor</th><td>Cr Olivia Martin — o.martin@northrivershire.demo</td></tr>
+    <tr><th>Division 1</th><td>Cr Joe Bloggs — j.bloggs@northrivershire.demo</td></tr>
+    <tr><th>Division 2</th><td>Cr Priya Patel — p.patel@northrivershire.demo</td></tr>
+    <tr><th>Division 3</th><td>Cr Michael Chen — m.chen@northrivershire.demo</td></tr>
+    <tr><th>Division 4</th><td>Cr Amy Williams — a.williams@northrivershire.demo</td></tr>
+    <tr><th>Division 5</th><td>Cr Samir Khan — s.khan@northrivershire.demo</td></tr>
+    <tr><th>Division 6</th><td>Cr Olivia Martin — o.martin@northrivershire.demo</td></tr>
+  </table>
 
-      <div class="qa"><strong>Q:</strong> Do I need approval for a garage?<br>
-      <strong>A:</strong> Yes—typical fees $540 app + $290 inspection; 10–15 business days. I can lodge now and issue a reference, or send the form.</div>
+  <h3>Universal Suburb Handling (always return a councillor)</h3>
+  <table>
+    <thead><tr><th>Suburb First Letter</th><th>Division</th><th>Councillor</th><th>Email</th></tr></thead>
+    <tbody>
+      <tr><td>A–C</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+      <tr><td>D–H</td><td>Division 2</td><td>Cr Priya Patel</td><td>p.patel@northrivershire.demo</td></tr>
+      <tr><td>I–L</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+      <tr><td>M–P</td><td>Division 4</td><td>Cr Amy Williams</td><td>a.williams@northrivershire.demo</td></tr>
+      <tr><td>Q–T</td><td>Division 5</td><td>Cr Samir Khan</td><td>s.khan@northrivershire.demo</td></tr>
+      <tr><td>U–Z</td><td>Division 6</td><td>Cr Olivia Martin</td><td>o.martin@northrivershire.demo</td></tr>
+    </tbody>
+  </table>
 
-      <div class="qa"><strong>Q:</strong> How much is a pool approval?<br>
-      <strong>A:</strong> About $860 including barrier inspection; 12–20 business days. I can start the application and send you the checklist.</div>
-    </section>
+  <h3>Specific Suburb Overrides (sample)</h3>
+  <table>
+    <thead><tr><th>Suburb</th><th>Division</th><th>Councillor</th><th>Email</th></tr></thead>
+    <tbody>
+      <tr><td>Riverstone</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+      <tr><td>Bluegum</td><td>Division 1</td><td>Cr Joe Bloggs</td><td>j.bloggs@northrivershire.demo</td></tr>
+      <tr><td>Ironbark</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+      <tr><td>Oakridge</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+      <tr><td>Fernvale</td><td>Division 3</td><td>Cr Michael Chen</td><td>m.chen@northrivershire.demo</td></tr>
+      <tr><td>Northpoint</td><td>Division 5</td><td>Cr Samir Khan</td><td>s.khan@northrivershire.demo</td></tr>
+      <tr><td>Greengate</td><td>Division 6</td><td>Cr Olivia Martin</td><td>o.martin@northrivershire.demo</td></tr>
+    </tbody>
+  </table>
+</section>
 
-    <section id="local-laws">
-      <h2>Local Laws — Animals & Parking</h2>
-      <table>
-        <thead><tr><th>Service</th><th>Fee (AUD)</th><th>Timing</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Dog rego (desexed)</td><td>$45/yr</td><td>Instant online / 1–2 days</td><td>Concessions apply</td></tr>
-          <tr><td>Dog rego (undesexed)</td><td>$95/yr</td><td>Instant / 1–2 days</td><td>Penalty if late</td></tr>
-          <tr><td>Cat rego</td><td>$35/yr</td><td>Instant / 1–2 days</td><td>Microchip required</td></tr>
-          <tr><td>Impound release</td><td>$120 + daily care</td><td>Same day</td><td>ID needed</td></tr>
-          <tr><td>Parking permit</td><td>$30/yr</td><td>3–5 business days</td><td>Proof of address needed</td></tr>
-          <tr><td>Animal nuisance complaint</td><td>Free</td><td>5 business days</td><td>Diary may be requested</td></tr>
-        </tbody>
-      </table>
+<!-- WASTE -->
+<section id="waste">
+  <h2>Waste & Recycling (Kerbside)</h2>
+  <table>
+    <tr><th>Bin sizes (standard)</th><td>240L general; 240L recycling</td></tr>
+    <tr><th>Placement</th><td>Out by 06:00 on collection day</td></tr>
+    <tr><th>Missed collection SLA</th><td>Re-collection within 1 business day (if valid)</td></tr>
+    <tr><th>Recycling upgrade</th><td>360L upgrade available (fees may apply)</td></tr>
+  </table>
+  <h3>Collection Days by First Letter (any suburb)</h3>
+  <table>
+    <thead><tr><th>First Letter</th><th>General Waste</th><th>Recycling</th><th>Time Window</th></tr></thead>
+    <tbody>
+      <tr><td>A–C</td><td>Mon</td><td>Thu (F/N)</td><td>Even# AM / Odd# PM</td></tr>
+      <tr><td>D–H</td><td>Tue</td><td>Fri</td><td>Even AM / Odd PM</td></tr>
+      <tr><td>I–L</td><td>Wed</td><td>Mon (F/N)</td><td>Even AM / Odd PM</td></tr>
+      <tr><td>M–P</td><td>Thu</td><td>Tue</td><td>Even AM / Odd PM</td></tr>
+      <tr><td>Q–T</td><td>Fri</td><td>Wed (F/N)</td><td>Even AM / Odd PM</td></tr>
+      <tr><td>U–Z</td><td>Mon</td><td>Thu</td><td>Even AM / Odd PM</td></tr>
+    </tbody>
+  </table>
+  <h3>Waste Facilities & Fees</h3>
+  <table>
+    <tr><th>Resource Recovery Centre</th><td>200 Recycle Rd, Riverstone</td></tr>
+    <tr><th>RRC Hours</th><td>Mon–Sun 07:00–17:00 (Closed Christmas Day)</td></tr>
+    <tr><th>Tip Vouchers</th><td>2 free per rates period (household waste)</td></tr>
+  </table>
+  <table>
+    <thead><tr><th>Item</th><th>Fee (AUD)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Car boot (general)</td><td>$15</td><td>With voucher: free</td></tr>
+      <tr><td>Ute/Trailer (general)</td><td>$35</td><td>Per load</td></tr>
+      <tr><td>Mattress</td><td>$25</td><td>Each</td></tr>
+      <tr><td>Whitegoods</td><td>$0</td><td>De-gassed only</td></tr>
+      <tr><td>Green waste</td><td>$10</td><td>Per load</td></tr>
+      <tr><td>Tyres (car)</td><td>$8</td><td>Per tyre</td></tr>
+      <tr><td>Hazardous waste</td><td>$0</td><td>Accepted only on scheduled days</td></tr>
+    </tbody>
+  </table>
+  <h3>Hard Waste</h3>
+  <table>
+    <tr><th>Quota</th><td>2 collections/year</td></tr>
+    <tr><th>Volume</th><td>Up to 2m³ per collection</td></tr>
+    <tr><th>Booking</th><td>Required</td></tr>
+  </table>
+</section>
 
-      <div class="qa"><strong>Q:</strong> How much to register my dog?<br>
-      <strong>A:</strong> $45/year if desexed; instant online or 1–2 days by email. I can register it now and send the receipt.</div>
-    </section>
+<!-- RATES -->
+<section id="rates">
+  <h2>Rates & Payments</h2>
+  <table>
+    <tr><th>Issue cycle</th><td>January & July</td></tr>
+    <tr><th>Early payment discount</th><td>5% within 30 days</td></tr>
+    <tr><th>Payment methods</th><td>BPAY (Biller 123456), Card by phone, Direct Debit, In-person</td></tr>
+    <tr><th>Hardship</th><td>Payment plans available</td></tr>
+    <tr><th>Pensioner rebate (demo)</th><td>Up to $200 per half year</td></tr>
+    <tr><th>Copy of notice</th><td>Email after identity/ownership verification</td></tr>
+  </table>
+</section>
 
-    <section id="health-food">
-      <h2>Environmental Health — Food Business & Events</h2>
-      <table>
-        <thead><tr><th>Permit</th><th>Fee (AUD)</th><th>Timing</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Fixed food business licence</td><td>$950</td><td>15–25 business days</td><td>Fit-out plans needed</td></tr>
-          <tr><td>Mobile food vendor</td><td>$520</td><td>10–15 business days</td><td>Gas & handwash reqs</td></tr>
-          <tr><td>Temporary food stall</td><td>$160</td><td>5–10 business days</td><td>One event up to 3 days</td></tr>
-          <tr><td>Amend/transfer licence</td><td>$210</td><td>5–10 business days</td><td>Ownership change</td></tr>
-        </tbody>
-      </table>
+<!-- BUILDING -->
+<section id="building-plumbing">
+  <h2>Building, Plumbing & Drainage</h2>
+  <table>
+    <thead><tr><th>Work Type</th><th>Pathway</th><th>Base Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Garage/Shed</td><td>Building approval via certifier; council referral if overlays</td><td>$540 + $290 inspection</td><td>10–15 business days</td><td>Self-assess ≤10m² & ≤2.4m high behind building line</td></tr>
+      <tr><td>Carport</td><td>Building approval</td><td>$520 + $250 inspection</td><td>10–15 business days</td><td>Typical side setback ≥1.0m</td></tr>
+      <tr><td>Patio/Deck</td><td>Self-assess ≤10m² else approval</td><td>$480 + $240</td><td>7–12 business days</td><td>Decks >1.0m need balustrades</td></tr>
+      <tr><td>Fence/Retaining</td><td>Self-assess ≤2.0m; approval if >2.0m or corner</td><td>$390</td><td>5–10 business days</td><td>Pool barriers separate rules</td></tr>
+      <tr><td>Swimming pool/Spa</td><td>Approval + barrier certification</td><td>$860 incl. inspection</td><td>12–20 business days</td><td>Temporary fencing during build only</td></tr>
+      <tr><td>House Extension</td><td>Building approval; planning referral if overlays</td><td>$1,250 + inspections</td><td>15–25 business days</td><td>Flood/heritage/character overlays</td></tr>
+      <tr><td>Granny Flat</td><td>Planning check + building</td><td>$1,100 + $980</td><td>20–30 business days</td><td>≤80m²; parking considerations</td></tr>
+      <tr><td>Demolition</td><td>Planning if heritage/character; building approval</td><td>$1,450 + waste levy</td><td>15–30 business days</td><td>Asbestos rules apply</td></tr>
+      <tr><td>Plumbing/Drainage</td><td>Plumbing app + inspections</td><td>$360 + $160 per inspection</td><td>5–10 business days</td><td>QBCC-licensed plumber</td></tr>
+      <tr><td>On-site wastewater (septic/AWTS)</td><td>On-site sewerage approval</td><td>$560</td><td>10–15 business days</td><td>Site/soil report needed</td></tr>
+      <tr><td>Pool Safety Certificate</td><td>Inspection & certificate</td><td>$210</td><td>Within 10 business days</td><td>By licensed inspector</td></tr>
+      <tr><td>Building Inspections (additional)</td><td>Re-inspection fee</td><td>$180</td><td>As booked</td><td>Per inspection</td></tr>
+    </tbody>
+  </table>
+</section>
 
-      <div class="qa"><strong>Q:</strong> I want a food truck licence—what’s the cost?<br>
-      <strong>A:</strong> $520 with 10–15 business days. I can start the application and send you the checklist.</div>
-    </section>
+<!-- PLANNING & CERTIFICATES -->
+<section id="planning">
+  <h2>Planning — Zones, Overlays & Certificates</h2>
+  <table>
+    <tr><th>Planning scheme</th><td>NRSC Planning Scheme (demo)</td></tr>
+    <tr><th>Typical zones</th><td>Low Density Residential; General Residential; Centre; Rural; Industry; Conservation</td></tr>
+    <tr><th>Common overlays</th><td>Flood Hazard; Bushfire; Heritage/Character; Biodiversity</td></tr>
+  </table>
+  <h3>Planning & Development Certificates (demo fees)</h3>
+  <table>
+    <thead><tr><th>Certificate Type</th><th>Fee (AUD)</th><th>Turnaround</th><th>Includes</th></tr></thead>
+    <tbody>
+      <tr><td>Basic</td><td>$165</td><td>5 business days</td><td>Zone & overlays</td></tr>
+      <tr><td>Standard</td><td>$345</td><td>10 business days</td><td>Zone, overlays, approvals, compliance</td></tr>
+      <tr><td>Full</td><td>$720</td><td>20 business days</td><td>All above + infrastructure/conditions</td></tr>
+    </tbody>
+  </table>
+  <h3>Infrastructure Charges (indicative)</h3>
+  <table>
+    <tr><th>Residential add’n bedroom</th><td>$2,500</td></tr>
+    <tr><th>Second dwelling (≤80m²)</th><td>$10,000</td></tr>
+    <tr><th>Commercial per 100m² GFA</th><td>$8,000</td></tr>
+  </table>
+  <h3>Pre-lodgement Advice</h3>
+  <table>
+    <tr><th>Phone/Email advice</th><td>$0 (10 min triage)</td></tr>
+    <tr><th>Planner callback</th><td>$220</td></tr>
+    <tr><th>Meeting (multi-disciplinary)</th><td>$520</td></tr>
+  </table>
+</section>
 
-    <section id="complaints">
-      <h2>Complaints & Feedback</h2>
-      <div class="qa"><strong>Q:</strong> I want to make a complaint.<br>
-      <strong>A:</strong> Please provide your name, suburb, and contact. I’ll log it and give you a reference like YRC187. Response in 5 business days.</div>
-    </section>
+<!-- ROADS & TRAFFIC -->
+<section id="roads-traffic">
+  <h2>Roads, Traffic & Temporary Closures</h2>
+  <table>
+    <tr><th>Pothole repair SLA</th><td>10 business days (sooner if hazardous)</td></tr>
+    <tr><th>Footpath damage</th><td>Investigation within 10 business days</td></tr>
+    <tr><th>Stormwater blockages</th><td>Priority when heavy rain forecast</td></tr>
+  </table>
+  <h3>Permits</h3>
+  <table>
+    <thead><tr><th>Permit</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Road Opening / Excavation</td><td>$410 + bond (from $1,000)</td><td>10 business days</td><td>TMP & public liability required</td></tr>
+      <tr><td>Temporary Road Closure (events/works)</td><td>$520</td><td>20 business days</td><td>Traffic guidance scheme; detours</td></tr>
+      <tr><td>Traffic Management Plan review</td><td>$180</td><td>5 business days</td><td>Per plan</td></tr>
+      <tr><td>Driveway/Crossover</td><td>$310 + $180 inspection</td><td>10 business days</td><td>Max width near street trees/utilities</td></tr>
+    </tbody>
+  </table>
+</section>
 
-    <section id="fallback">
-      <h2>Fallback Answer for Any Suburb</h2>
-      <div class="qa"><strong>Q:</strong> What if my suburb isn’t listed?<br>
-      <strong>A:</strong> Every suburb is covered. If not in a table, apply Universal Suburb Rules: A–C = Cr Joe Bloggs, D–H = Cr Priya Patel, I–L = Cr Michael Chen, M–P = Cr Amy Williams, Q–T = Cr Samir Khan, U–Z = Cr Olivia Martin. Waste/recycling days and venues follow the same letter mapping. You’ll always get a councillor and service info—no suburb is excluded.</div>
-    </section>
+<!-- WATER & TRADE WASTE -->
+<section id="water-sewer">
+  <h2>Water, Sewer, Trade Waste & Backflow</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>New water connection</td><td>$1,450</td><td>15–25 business days</td><td>Meter install included</td></tr>
+      <tr><td>New sewer connection</td><td>$2,200</td><td>20–30 business days</td><td>Inspection required</td></tr>
+      <tr><td>Trade waste application</td><td>$360</td><td>10–15 business days</td><td>Grease trap sizing</td></tr>
+      <tr><td>Backflow device registration</td><td>$95 / device</td><td>5 business days</td><td>Annual test certificate required</td></tr>
+    </tbody>
+  </table>
+</section>
 
-  </main>
+<!-- ANIMALS -->
+<section id="animals-parking">
+  <h2>Animals — Registration, Pound & Nuisance</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Fee (AUD)</th><th>Timing</th><th>Requirements</th></tr></thead>
+    <tbody>
+      <tr><td>Dog registration (desexed)</td><td>$45/yr</td><td>Instant/1–2 days</td><td>Microchip</td></tr>
+      <tr><td>Dog registration (undesexed)</td><td>$95/yr</td><td>Instant/1–2 days</td><td>Late penalty after 30 days</td></tr>
+      <tr><td>Cat registration</td><td>$35/yr</td><td>Instant/1–2 days</td><td>Microchip</td></tr>
+      <tr><td>Impound release (standard)</td><td>$120 + daily care</td><td>Same day</td><td>ID & proof of ownership</td></tr>
+      <tr><td>Adoption (dog/cat)</td><td>$180 / $120</td><td>Same day</td><td>Includes microchip & desex (demo)</td></tr>
+      <tr><td>Barking dog complaint</td><td>$0</td><td>First action 5 business days</td><td>Nuisance diary may be requested</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PARKING & INFRINGEMENTS -->
+<section id="parking">
+  <h2>Parking — Permits & Infringements</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Fee (AUD)</th><th>Timing</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Residential parking permit</td><td>$30/yr</td><td>3–5 business days</td><td>Proof of address + rego</td></tr>
+      <tr><td>Infringement (no stopping)</td><td>$120</td><td>—</td><td>Pay within 28 days</td></tr>
+      <tr><td>Infringement (time overstay)</td><td>$70</td><td>—</td><td>Pay within 28 days</td></tr>
+      <tr><td>Internal review request</td><td>$0</td><td>Outcome 20 business days</td><td>Evidence required</td></tr>
+      <tr><td>Payment plan setup</td><td>$0</td><td>—</td><td>For eligible customers</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ENVIRONMENTAL HEALTH -->
+<section id="env-health">
+  <h2>Environmental Health — Food, Noise, Events</h2>
+  <table>
+    <thead><tr><th>Permit/Service</th><th>Fee (AUD)</th><th>Turnaround</th><th>Requirements</th></tr></thead>
+    <tbody>
+      <tr><td>Fixed food business licence (new)</td><td>$950</td><td>15–25 business days</td><td>Fit-out plans; Food Safety Supervisor</td></tr>
+      <tr><td>Mobile food vendor</td><td>$520</td><td>10–15 business days</td><td>Gas cert; handwash</td></tr>
+      <tr><td>Temporary event food stall</td><td>$160</td><td>5–10 business days</td><td>Event dates; handling</td></tr>
+      <tr><td>Noise exemption (event)</td><td>$180</td><td>10 business days</td><td>Event plan & finish time</td></tr>
+      <tr><td>Public health mosquito treatment</td><td>$0</td><td>As scheduled</td><td>Seasonal fogging (demo)</td></tr>
+      <tr><td>Backyard burning (urban)</td><td>Not permitted</td><td>—</td><td>Rural permits via QFES</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- EVENTS/PARKS/FILMING/MARKETS -->
+<section id="events">
+  <h2>Events, Parks Use, Filming & Markets</h2>
+  <table>
+    <thead><tr><th>Permit/Booking</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Park event booking (≤200 ppl)</td><td>$120</td><td>3–7 business days</td><td>Low-risk event</td></tr>
+      <tr><td>Park event booking (>200 ppl)</td><td>$260</td><td>10–15 business days</td><td>Event plan; toilets; waste</td></tr>
+      <tr><td>Filming permit (low impact)</td><td>$240</td><td>10 business days</td><td>Public liability insurance</td></tr>
+      <tr><td>Filming permit (road use)</td><td>$620</td><td>20 business days</td><td>TMP required</td></tr>
+      <tr><td>Market permit (recurring)</td><td>$450/season</td><td>15 business days</td><td>Stallholder management</td></tr>
+      <tr><td>Busking permit</td><td>$40/yr</td><td>5 business days</td><td>Code of conduct</td></tr>
+      <tr><td>Commercial signage (temporary)</td><td>$110</td><td>5–10 business days</td><td>Advertising device rules</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- LIBRARIES & VENUES -->
+<section id="libraries-venues">
+  <h2>Libraries & Halls</h2>
+  <h3>Libraries</h3>
+  <table>
+    <thead><tr><th>Branch</th><th>Address</th><th>Hours</th><th>Services</th></tr></thead>
+    <tbody>
+      <tr><td>Riverstone Library</td><td>12 Library Lane, Riverstone</td><td>Mon–Fri 09:00–17:00; Sat 09:00–13:00</td><td>Wi-Fi; PCs; printing; storytime</td></tr>
+      <tr><td>Bluegum Library</td><td>5 Paperbark St, Bluegum</td><td>Tue–Sat 09:00–17:00</td><td>Wi-Fi; PCs; printing</td></tr>
+    </tbody>
+  </table>
+  <h3>Halls — Hire Fees (indicative)</h3>
+  <table>
+    <thead><tr><th>Venue</th><th>Community Rate</th><th>Commercial Rate</th><th>Bond</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Civic Hall (Riverstone)</td><td>$55/hr</td><td>$110/hr</td><td>$500</td><td>Stage, AV available</td></tr>
+      <tr><td>Bluegum Community Centre</td><td>$35/hr</td><td>$80/hr</td><td>$250</td><td>Kitchenette</td></tr>
+    </tbody>
+  </table>
+  <h3>Routing by First Letter (when suburb unknown)</h3>
+  <table>
+    <thead><tr><th>First Letter</th><th>Primary Library</th><th>Primary Venue</th></tr></thead>
+    <tbody>
+      <tr><td>A–C</td><td>Riverstone Library</td><td>Civic Hall</td></tr>
+      <tr><td>D–H</td><td>Bluegum Library</td><td>Bluegum Community Centre</td></tr>
+      <tr><td>I–L</td><td>Riverstone Library</td><td>Oakridge Reserve</td></tr>
+      <tr><td>M–P</td><td>Bluegum Library</td><td>Northpoint Sports Fields</td></tr>
+      <tr><td>Q–T</td><td>Riverstone Library</td><td>Greengate Gardens</td></tr>
+      <tr><td>U–Z</td><td>Bluegum Library</td><td>Civic Hall</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CEMETERIES -->
+<section id="cemeteries">
+  <h2>Cemeteries & Memorials</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>New burial plot (lawn)</td><td>$3,200</td><td>As booked</td><td>Includes perpetual tenure (demo)</td></tr>
+      <tr><td>Ashes niche</td><td>$980</td><td>As booked</td><td>Inscription extra</td></tr>
+      <tr><td>Interment fee</td><td>$1,100</td><td>As booked</td><td>Weekday rate</td></tr>
+      <tr><td>Plaque/inscription</td><td>$380</td><td>15–25 business days</td><td>Proofreading required</td></tr>
+      <tr><td>Genealogical search</td><td>$40</td><td>5 business days</td><td>Per name</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- COMMUNITY GRANTS -->
+<section id="grants">
+  <h2>Community Grants (demo)</h2>
+  <table>
+    <tr><th>Round timing</th><td>Twice yearly (Mar/Sep)</td></tr>
+    <tr><th>Small grants</th><td>Up to $5,000</td></tr>
+    <tr><th>Partnership grants</th><td>Up to $20,000</td></tr>
+    <tr><th>Assessment window</th><td>6–8 weeks</td></tr>
+  </table>
+</section>
+
+<!-- DISASTER MANAGEMENT -->
+<section id="disaster">
+  <h2>Disaster Management</h2>
+  <table>
+    <tr><th>Sandbag locations (activation)</th><td>Civic Depot, 50 Works Rd, Riverstone</td></tr>
+    <tr><th>Evacuation centre (activation)</th><td>Civic Hall, 100 Civic Way</td></tr>
+    <tr><th>Alert channels</th><td>Website, SMS alerts (opt-in), local radio</td></tr>
+  </table>
+</section>
+
+<!-- PROPERTY SEARCHES -->
+<section id="property-search">
+  <h2>Property Searches & Certificates</h2>
+  <table>
+    <thead><tr><th>Search/Certificate</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Rates search (settlements)</td><td>$150</td><td>5 business days</td><td>Outstanding rates/charges</td></tr>
+      <tr><td>Building records search</td><td>$220</td><td>10 business days</td><td>Approvals & inspections</td></tr>
+      <tr><td>Plumbing records search</td><td>$180</td><td>10 business days</td><td>Drainage plans (if available)</td></tr>
+      <tr><td>As-constructed drainage plan</td><td>$95</td><td>5 business days</td><td>If on record</td></tr>
+      <tr><td>Flood level enquiry (property)</td><td>$85</td><td>5 business days</td><td>Historic data (demo)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PAYMENTS -->
+<section id="payments">
+  <h2>Payments & Methods</h2>
+  <table>
+    <tr><th>Online</th><td>Request secure link via pay@northrivershire.demo</td></tr>
+    <tr><th>BPAY</th><td>Biller 123456; Ref = notice number</td></tr>
+    <tr><th>Phone</th><td>+61 7 3456 7890 (card)</td></tr>
+    <tr><th>In-person</th><td>100 Civic Way, Riverstone</td></tr>
+    <tr><th>Direct Debit</th><td>FRM-FIN-090</td></tr>
+  </table>
+</section>
+
+<!-- COMPLAINTS & RTI -->
+<section id="complaints">
+  <h2>Feedback, Complaints & RTI</h2>
+  <table>
+    <tr><th>Complaint logging</th><td>Reference format <code>YRC###</code>; first response within 5 business days</td></tr>
+    <tr><th>Compliments</th><td>Recorded and forwarded to relevant team and councillor</td></tr>
+    <tr><th>Right to Information (RTI) app fee (demo)</th><td>$52.60</td></tr>
+  </table>
+</section>
+
+<!-- FORMS -->
+<section id="forms">
+  <h2>Forms & Checklists (IDs only)</h2>
+  <table>
+    <thead><tr><th>Form Name</th><th>Form ID (demo)</th></tr></thead>
+    <tbody>
+      <tr><td>Building Application Checklist</td><td>FRM-BLD-001</td></tr>
+      <tr><td>Owner’s Consent Form</td><td>FRM-BLD-002</td></tr>
+      <tr><td>Plumbing & Drainage Application</td><td>FRM-PLM-010</td></tr>
+      <tr><td>On-site Sewerage (Septic/AWTS)</td><td>FRM-PLM-011</td></tr>
+      <tr><td>Crossover Permit Application</td><td>FRM-RD-021</td></tr>
+      <tr><td>Road Opening / Excavation</td><td>FRM-RD-022</td></tr>
+      <tr><td>Temporary Road Closure</td><td>FRM-RD-023</td></tr>
+      <tr><td>Traffic Management Plan Submission</td><td>FRM-RD-024</td></tr>
+      <tr><td>Tree Works Permit Application</td><td>FRM-ENV-030</td></tr>
+      <tr><td>Food Business Licence Application</td><td>FRM-FND-040</td></tr>
+      <tr><td>Temporary Food Stall Permit</td><td>FRM-FND-041</td></tr>
+      <tr><td>Noise Exemption (Event)</td><td>FRM-ENV-042</td></tr>
+      <tr><td>Animal Registration</td><td>FRM-ANM-050</td></tr>
+      <tr><td>Residential Parking Permit</td><td>FRM-PKG-060</td></tr>
+      <tr><td>Event / Park Booking Request</td><td>FRM-EVT-070</td></tr>
+      <tr><td>Filming Permit Application</td><td>FRM-EVT-071</td></tr>
+      <tr><td>Community Grants Application</td><td>FRM-COM-080</td></tr>
+      <tr><td>Complaint / Feedback</td><td>FRM-CST-081</td></tr>
+      <tr><td>Rates Direct Debit Request</td><td>FRM-FIN-090</td></tr>
+      <tr><td>Planning & Development Certificate (Basic)</td><td>FRM-PLN-100</td></tr>
+      <tr><td>Planning & Development Certificate (Standard)</td><td>FRM-PLN-101</td></tr>
+      <tr><td>Planning & Development Certificate (Full)</td><td>FRM-PLN-102</td></tr>
+      <tr><td>RTI Application</td><td>FRM-GOV-110</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- OPERATIONAL DEFAULTS -->
+<section id="meta">
+  <h2>Operational Defaults (Demo)</h2>
+  <table>
+    <tr><th>Reference number format</th><td>YRC### (e.g., YRC187)</td></tr>
+    <tr><th>Booking acknowledgement</th><td>Provisional hold on receipt of details (demo)</td></tr>
+    <tr><th>Confirmation method</th><td>Email/SMS noted (demo)</td></tr>
+    <tr><th>Languages</th><td>English primary; interpreter access (demo)</td></tr>
+    <tr><th>Accessibility</th><td>Hearing loop at Civic Hall; Library Quiet Hour Wed 10:00–11:00</td></tr>
+    <tr><th>Emergency instruction</th><td>Threat to life/property → Call 000</td></tr>
+    <tr><th>After-hours</th><td>1300 000 247</td></tr>
+    <tr><th>Privacy (demo)</th><td>Data captured in demo is not retained for production</td></tr>
+    <tr><th>Service SLAs (general)</th><td>First response 5 business days unless noted</td></tr>
+  </table>
+</section>
+<!-- ===================================================== -->
+<!-- MAX++ ADD-ON SECTIONS — PURE DATA ONLY (DEMO)        -->
+<!-- ===================================================== -->
+
+<section id="street-trading">
+  <h2>Street Trading & Outdoor Dining</h2>
+  <table>
+    <thead><tr><th>Permit</th><th>Fee (AUD)</th><th>Turnaround</th><th>Key Requirements</th></tr></thead>
+    <tbody>
+      <tr><td>Outdoor dining (footpath)</td><td>$420/yr</td><td>10 business days</td><td>Public liability $20M; site plan; furniture specs</td></tr>
+      <tr><td>A-frame sign (per premises)</td><td>$95/yr</td><td>5–10 business days</td><td>Max 600×900mm; one per frontage</td></tr>
+      <tr><td>Goods display on footpath</td><td>$180/yr</td><td>10 business days</td><td>Min 1.8m pedestrian clearway</td></tr>
+      <tr><td>Street stall / fundraising</td><td>$40/day</td><td>5 business days</td><td>Charity details; site map</td></tr>
+      <tr><td>Banners across road (event)</td><td>$120/week</td><td>10 business days</td><td>Approved fixings only</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="hoarding-scaffold">
+  <h2>Hoarding, Scaffolding & Works in Road Reserve</h2>
+  <table>
+    <thead><tr><th>Permit</th><th>Fee (AUD)</th><th>Bond</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Hoarding (Type A/B)</td><td>$360 + $12/m/week</td><td>From $1,500</td><td>10–15 business days</td><td>Engineered design; pedestrian detour plan</td></tr>
+      <tr><td>Scaffold over footpath</td><td>$310 + $10/m/week</td><td>From $1,000</td><td>10 business days</td><td>Lighting & protection</td></tr>
+      <tr><td>Works in road reserve</td><td>$410</td><td>As assessed</td><td>10 business days</td><td>TMP; dial-before-you-dig; reinstatement standard</td></tr>
+      <tr><td>Crane placement</td><td>$520/day</td><td>As assessed</td><td>10 business days</td><td>Traffic control & exclusion zones</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="signage-permits">
+  <h2>Advertising Devices (Signage)</h2>
+  <table>
+    <thead><tr><th>Sign Type</th><th>Fee (AUD)</th><th>Turnaround</th><th>Key Limits</th></tr></thead>
+    <tbody>
+      <tr><td>Wall sign</td><td>$220</td><td>10 business days</td><td>Area ≤ 6m² without impact assessment</td></tr>
+      <tr><td>Pylon sign ≤6m high</td><td>$380</td><td>15 business days</td><td>Setbacks from boundaries and sightlines</td></tr>
+      <tr><td>Temporary event banner</td><td>$110</td><td>5 business days</td><td>Display ≤ 21 days</td></tr>
+      <tr><td>Electronic sign</td><td>$640</td><td>20 business days</td><td>Brightness & dwell-time standards</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="dev-contributions">
+  <h2>Development Contributions & Calculators (Indicative)</h2>
+  <table>
+    <tr><th>Residential additional bedroom</th><td>$2,500 per bedroom</td></tr>
+    <tr><th>Second dwelling (≤80m²)</th><td>$10,000 per dwelling</td></tr>
+    <tr><th>Commercial</th><td>$8,000 per 100m² GFA</td></tr>
+    <tr><th>Open space contribution</th><td>$1,200 per dwelling</td></tr>
+    <tr><th>Stormwater contribution</th><td>$900 per dwelling equivalent</td></tr>
+  </table>
+  <table>
+    <thead><tr><th>Calculator Name</th><th>Inputs</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td>Residential ICC (demo)</td><td>Dwellings, bedrooms</td><td>Total contribution</td></tr>
+      <tr><td>Commercial ICC (demo)</td><td>GFA, land use</td><td>Total contribution</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="addressing">
+  <h2>Property Numbering & Addressing</h2>
+  <table>
+    <tr><th>New rural address allocation</th><td>$95</td></tr>
+    <tr><th>Number change request (urban)</th><td>$160</td></tr>
+    <tr><th>Turnaround</th><td>10–15 business days</td></tr>
+    <tr><th>Authority notifications (demo)</th><td>Council, Queensland Fire and Emergency Services, Australia Post</td></tr>
+  </table>
+</section>
+
+<section id="flood-drainage-info">
+  <h2>Flood & Drainage Information</h2>
+  <table>
+    <tr><th>Property flood level search</th><td>$85 — 5 business days</td></tr>
+    <tr><th>As-constructed stormwater plan</th><td>$95 — 5 business days</td></tr>
+    <tr><th>Overland flow overlay</th><td>Refer planning overlays (data only)</td></tr>
+    <tr><th>Stormwater connection approval</th><td>$210 — 10 business days</td></tr>
+  </table>
+</section>
+
+<section id="water-restrictions">
+  <h2>Water Restrictions (Demo Levels)</h2>
+  <table>
+    <thead><tr><th>Level</th><th>Outdoor watering</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Permanent</td><td>Odd/even days; 4–7pm only</td><td>Trigger nozzles required</td></tr>
+      <tr><td>Moderate</td><td>2 days/week</td><td>Evening only</td></tr>
+      <tr><td>High</td><td>Hand-held only</td><td>No sprinklers</td></tr>
+      <tr><td>Extreme</td><td>Essential use only</td><td>Fines may apply</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="compliance-local-laws">
+  <h2>Compliance — Illegal Dumping, Abandoned Vehicles, Noise, Light Spill</h2>
+  <table>
+    <thead><tr><th>Issue</th><th>Fee/Action</th><th>SLA</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Illegal dumping report</td><td>Free</td><td>Initial action 3 business days</td><td>Provide location, description, photos</td></tr>
+      <tr><td>Abandoned vehicle</td><td>Free</td><td>Notice within 3 business days</td><td>Tow after statutory period</td></tr>
+      <tr><td>Excessive noise (non-event)</td><td>Free</td><td>First contact 5 business days</td><td>Diary may be requested</td></tr>
+      <tr><td>Light spill complaint</td><td>Free</td><td>First contact 5 business days</td><td>Photos and timing helpful</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="graffiti">
+  <h2>Graffiti & Vandalism</h2>
+  <table>
+    <tr><th>Public asset graffiti removal</th><td>Free — 5 business days (priority for offensive)</td></tr>
+    <tr><th>Private property removal support</th><td>Voucher kit (demo) — 1 per year</td></tr>
+    <tr><th>Report details</th><td>Address/landmark, surface type, photo if safe</td></tr>
+  </table>
+</section>
+
+<section id="verge-naturestrip">
+  <h2>Verge (Nature Strip) — Gardening & Trees</h2>
+  <table>
+    <tr><th>Resident verge mowing</th><td>Permitted</td></tr>
+    <tr><th>Planting low shrubs/groundcovers</th><td>Permitted ≤600mm height</td></tr>
+    <tr><th>Edging/rocks</th><td>Not permitted to create trip hazard</td></tr>
+    <tr><th>Street tree planting</th><td>By council or approved contractor</td></tr>
+    <tr><th>Street tree pruning/removal</th><td>Permit required — $0 assessment</td></tr>
+  </table>
+</section>
+
+<section id="sports-allocations">
+  <h2>Sports Fields — Seasonal Allocations</h2>
+  <table>
+    <thead><tr><th>Season</th><th>Window</th><th>Allocation Fee (demo)</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>Winter</td><td>Apr–Sep</td><td>$450/field/month</td><td>Existing tenant clubs</td></tr>
+      <tr><td>Summer</td><td>Oct–Mar</td><td>$450/field/month</td><td>Existing tenant clubs</td></tr>
+      <tr><td>Casual booking</td><td>Year-round</td><td>$30/hr</td><td>Subject to maintenance/season</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="aquatic-centre">
+  <h2>Aquatic Centre (Demo)</h2>
+  <table>
+    <tr><th>Address</th><td>25 Pool Parade, Riverstone</td></tr>
+    <tr><th>Hours</th><td>Mon–Fri 05:30–19:00; Sat 06:00–18:00; Sun 07:00–17:00</td></tr>
+    <tr><th>Lane hire</th><td>$18/hr per lane</td></tr>
+    <tr><th>Carnival booking</th><td>$520 half-day; $980 full-day</td></tr>
+  </table>
+</section>
+
+<section id="school-holidays">
+  <h2>School Holiday Programs (Demo)</h2>
+  <table>
+    <thead><tr><th>Program</th><th>Age</th><th>Fee (AUD)</th><th>Location</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>STEM Lab</td><td>8–12</td><td>$25</td><td>Riverstone Library</td><td>2-hour workshop</td></tr>
+      <tr><td>Art in the Park</td><td>6–10</td><td>$15</td><td>Greengate Gardens</td><td>Materials included</td></tr>
+      <tr><td>Swim & Safety</td><td>7–12</td><td>$30</td><td>Aquatic Centre</td><td>Qualified instructors</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="public-art">
+  <h2>Public Art, Murals & Plaques</h2>
+  <table>
+    <thead><tr><th>Approval Type</th><th>Fee (AUD)</th><th>Turnaround</th><th>Requirements</th></tr></thead>
+    <tbody>
+      <tr><td>Mural on private wall (visible to street)</td><td>$160</td><td>10 business days</td><td>Owner consent; concept image</td></tr>
+      <tr><td>Artwork on council land</td><td>$420</td><td>20 business days</td><td>Site plan; maintenance plan; insurance</td></tr>
+      <tr><td>Commemorative plaque</td><td>$240</td><td>15 business days</td><td>Text approval; installation method</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="markets-filming-exp">
+  <h2>Markets & Filming — Expanded</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Fee (AUD)</th><th>Turnaround</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Pop-up market (≤20 stalls)</td><td>$260/event</td><td>10 business days</td><td>Waste plan; amenities</td></tr>
+      <tr><td>Major market (>20 stalls)</td><td>$520/event</td><td>15–20 business days</td><td>Traffic & risk plans</td></tr>
+      <tr><td>Drone filming over council land</td><td>$180/day</td><td>10 business days</td><td>CASA compliance; NOTAM if required</td></tr>
+      <tr><td>Advertising stills</td><td>$120/day</td><td>5 business days</td><td>Minimal impact</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="cctv-community-safety">
+  <h2>Community Safety & CCTV (Demo)</h2>
+  <table>
+    <tr><th>Private CCTV registration</th><td>Free — optional; used for investigation requests</td></tr>
+    <tr><th>Street lighting fault</th><td>Report location/pole number — referred to provider</td></tr>
+    <tr><th>Sharps disposal</th><td>Sharps bins at RRC & clinics</td></tr>
+  </table>
+</section>
+
+<section id="tenders-procurement">
+  <h2>Procurement & Tenders (Demo)</h2>
+  <table>
+    <tr><th>Tender portal</th><td>Vendor registration (demo)</td></tr>
+    <tr><th>Thresholds</th><td>Quotes <$15k; 2 quotes $15k–$50k; Tender >$200k</td></tr>
+    <tr><th>Local supplier preference</th><td>Up to 5% weighting (demo)</td></tr>
+  </table>
+</section>
+
+</main>
 </body>
 </html>
